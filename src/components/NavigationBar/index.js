@@ -24,8 +24,22 @@ class NavigationBar extends Component {
       {value => {
         const {isDarkTheme, activeTab, changeTab} = value
         const bgColor = isDarkTheme ? '#212121' : '#ffffff'
-        const color = isDarkTheme ? '#cbd5e1' : '#606060'
-        const activeTabBg = isDarkTheme ? '#475569' : '#909090'
+        const color = isDarkTheme ? '#cccccc' : '#606060'
+
+        const activeTabBg = isDarkTheme ? '#606060' : '#d7dfe9'
+
+        const onClickHomeTab = () => {
+          changeTab('Home')
+        }
+        const onClickTrendingTab = () => {
+          changeTab('Trending')
+        }
+        const onClickGamingTab = () => {
+          changeTab('Gaming')
+        }
+        const onClickSavedTab = () => {
+          changeTab('Saved')
+        }
 
         return (
           <NavBar>
@@ -34,9 +48,8 @@ class NavigationBar extends Component {
                 <NavLink to="/">
                   <NavLinkContainer
                     key="Home"
-                    activeTabBgColor={
-                      activeTab === 'Home' ? activeTabBg : 'none'
-                    }
+                    bgColor={activeTab === 'Home' ? activeTabBg : 'none'}
+                    onClick={onClickHomeTab}
                   >
                     <AiFillHome
                       size={20}
@@ -46,28 +59,40 @@ class NavigationBar extends Component {
                   </NavLinkContainer>
                 </NavLink>
                 <NavLink to="/trending">
-                  <NavLinkContainer key="Trending">
+                  <NavLinkContainer
+                    key="Trending"
+                    onClick={onClickTrendingTab}
+                    bgColor={activeTab === 'Trending' ? activeTabBg : 'none'}
+                  >
                     <HiFire
                       size={20}
-                      color={isDarkTheme ? '#94a3b8' : '#606060'}
+                      color={activeTab === 'Trending' ? '#ff0b37' : '#606060'}
                     />
                     <NavText color={color}>Trending</NavText>
                   </NavLinkContainer>
                 </NavLink>
                 <NavLink to="/gaming">
-                  <NavLinkContainer key="Gaming">
+                  <NavLinkContainer
+                    key="Gaming"
+                    onClick={onClickGamingTab}
+                    bgColor={activeTab === 'Gaming' ? activeTabBg : 'none'}
+                  >
                     <SiYoutubegaming
                       size={20}
-                      color={isDarkTheme ? '##94a3b8' : '#606060'}
+                      color={activeTab === 'Gaming' ? '#ff0b37' : '#606060'}
                     />
                     <NavText color={color}>Gaming</NavText>
                   </NavLinkContainer>
                 </NavLink>
                 <NavLink to="/saved-videos">
-                  <NavLinkContainer key="Saved">
+                  <NavLinkContainer
+                    key="Saved"
+                    onClick={onClickSavedTab}
+                    bgColor={activeTab === 'Saved' ? activeTabBg : 'none'}
+                  >
                     <MdPlaylistAdd
                       size={20}
-                      color={isDarkTheme ? '#94a3b8' : '#606060'}
+                      color={activeTab === 'Saved' ? '#ff0b37' : '#606060'}
                     />
                     <NavText color={color}>Saved Videos</NavText>
                   </NavLinkContainer>

@@ -1,17 +1,14 @@
 import {Component} from 'react'
 import Loader from 'react-loader-spinner'
 import Cookies from 'js-cookie'
-import {HiFire} from 'react-icons/hi'
 import Header from '../Header'
 import NavigationBar from '../NavigationBar'
 import FailureView from '../FailureView'
 import TrendingVideoCard from '../TrendingVideoCard'
 import ThemeContext from '../../context/ThemeContext'
+import TabTopContainer from '../TabTopContainer'
 import {
   TrendingMainContainer,
-  TrendingTopContainer,
-  TrendingIconContainer,
-  TrendingHeading,
   LoaderContainer,
   VideosContainer,
 } from './styledComponents'
@@ -122,36 +119,15 @@ class Trending extends Component {
   }
 
   render() {
-    const {trendingApiStatus} = this.state
-
     return (
-      <ThemeContext.Consumer>
-        {value => {
-          const {isDarkTheme} = value
-
-          return (
-            <>
-              <Header />
-              <NavigationBar />
-              <TrendingMainContainer>
-                <TrendingTopContainer
-                  bgColor={isDarkTheme ? '#181818' : '#f1f1f1'}
-                >
-                  <TrendingIconContainer
-                    bgColor={isDarkTheme ? '#000000' : '#d7dfe9'}
-                  >
-                    <HiFire size={30} color="#ff0b37" />
-                  </TrendingIconContainer>
-                  <TrendingHeading color={isDarkTheme ? '#f1f5f9' : '#1e293b'}>
-                    Trending
-                  </TrendingHeading>
-                </TrendingTopContainer>
-                {this.appendTrendingVideos()}
-              </TrendingMainContainer>
-            </>
-          )
-        }}
-      </ThemeContext.Consumer>
+      <>
+        <Header />
+        <NavigationBar />
+        <TrendingMainContainer>
+          <TabTopContainer tabName="Trending" />
+          {this.appendTrendingVideos()}
+        </TrendingMainContainer>
+      </>
     )
   }
 }

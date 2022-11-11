@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 
 export const VideoCardLink = styled(Link)`
   text-decoration: none;
-  color: ${props => props.textColor} !important;
+  color: ${props => props.textColor};
 `
 
 export const VideoCardItem = styled.li`
@@ -13,9 +13,9 @@ export const VideoCardItem = styled.li`
   width: 100%;
   margin-bottom: 20px;
   @media screen and (min-width: 768px) {
-    width: 305px;
+    width: 245px;
     flex-grow: 1;
-    margin-right: 20px;
+    margin-right: 15px;
     margin-bottom: 20px;
   }
 `
@@ -34,8 +34,8 @@ export const ChannelVideoDescContainer = styled.div`
 `
 
 export const ChannelImg = styled.img`
-  height: 50px;
-  width: 50px;
+  height: 30px;
+  width: 30px;
   margin-right: 10px;
 `
 
@@ -46,23 +46,21 @@ export const VideoInsightsContainer = styled.div`
 `
 
 export const VideoTitle = styled.p`
-  margin: 0px;
-  color: ${props => props.textColor};
+  margin: 0;
+  margin-bottom: 2px;
   font-family: 'Consolas';
-  font-size: 18px;
+  font-size: 15px;
 `
 
 export const ChannelName = styled.p`
-  margin: 2px;
-  color: ${props => props.textColor};
   font-family: 'Consolas';
-  font-size: 18px;
+  font-size: 13px;
 `
 
 export const ViewsAndDate = styled.p`
-  margin: 2px;
   color: ${props => props.textColor} !important;
   font-family: 'Consolas';
+  font-size: 13px;
 `
 
 export const Dot = styled.span`

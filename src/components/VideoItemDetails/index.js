@@ -101,7 +101,6 @@ class VideoItemDetails extends Component {
 
   renderVideoDetails = () => {
     const {videoDetails, isVideoLiked, isVideoDisliked} = this.state
-
     return (
       <PlayVideoView
         videoDetails={videoDetails}

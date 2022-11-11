@@ -33,7 +33,10 @@ const HomeVideoCard = props => {
         const textColor = isDarkTheme ? '#f9f9f9' : '#231f20'
 
         return (
-          <VideoCardLink to={`videos/${id}`}>
+          <VideoCardLink
+            color={isDarkTheme ? '#ffffff' : '#000000'}
+            to={`videos/${id}`}
+          >
             <VideoCardItem>
               <VideoCoverImage src={thumbnailUrl} alt={id} />
               <ChannelVideoDescContainer>
@@ -41,7 +44,9 @@ const HomeVideoCard = props => {
                 <VideoInsightsContainer>
                   <VideoTitle color={textColor}>{title}</VideoTitle>
                   <ChannelName color={textColor}>{channelName}</ChannelName>
+
                   <ViewsAndDate>
+                    <Dot> &#8226; </Dot>
                     {viewCount} views <Dot> &#8226; </Dot>
                     {formatDistanceToNow(new Date(publishedAt))}
                   </ViewsAndDate>

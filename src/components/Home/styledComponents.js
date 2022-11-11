@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 export const HomeContainer = styled.div`
   background-color: ${props => props.bgColor};
-  width: 100%;
   min-height: 100vh;
   margin-bottom: 60px;
   margin-top: 60px;
@@ -69,16 +68,22 @@ export const SearchContainer = styled.div`
   flex-direction: row;
   height: 30px;
   margin: 20px;
-  @media screen and (max-width: 768px) {
-    width: 90vw;
+  width: 90%;
+  border: solid 1px ${props => props.borderColor};
+  @media screen and (min-width: 768px) {
+    width: 50%;
   }
 `
 
 export const SearchInput = styled.input`
   padding: 5px;
-  width: 300px;
+  width: 100%;
   outline: none;
-  font-weight: 600;
+  border-style: none;
+  border-width: 0;
+  font-size: 12px;
+  background-color: ${props => props.bgColor};
+  color: ${props => props.color};
 `
 
 export const SearchIconContainer = styled.button`
@@ -90,7 +95,8 @@ export const SearchIconContainer = styled.button`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border-left: none;
+  border-style: none;
+  border-left: solid 1px ${props => props.borderColor};
 `
 
 export const LoaderContainer = styled.div`

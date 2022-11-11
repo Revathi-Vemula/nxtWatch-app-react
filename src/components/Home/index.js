@@ -159,21 +159,26 @@ class Home extends Component {
                   </BannerSecondPart>
                 </BannerSection>
                 <SearchContainer
-                  borderColor={isDarkTheme ? '#cccccc' : '#ebebeb'}
+                  borderColor={isDarkTheme ? '#cccccc' : '#909090'}
                 >
                   <SearchInput
                     type="text"
                     placeholder="Search"
-                    bgColor={bgColor}
+                    bgColor={isDarkTheme ? '#181818' : '#f9f9f9'}
+                    color={isDarkTheme ? '#cccccc' : '#424242'}
                     value={searchInput}
                     onChange={this.onChangeSearchInput}
                   />
                   <SearchIconContainer
                     bgColor={isDarkTheme ? '#606060' : '#f1f1f1'}
+                    borderColor={isDarkTheme ? '#cccccc' : '#909090'}
                     type="button"
                     onClick={this.getSearchVideoResults}
                   >
-                    <AiOutlineSearch size={15} />
+                    <AiOutlineSearch
+                      size={15}
+                      color={isDarkTheme ? '#cccccc' : '#909090'}
+                    />
                   </SearchIconContainer>
                 </SearchContainer>
                 {this.renderApiStatusResults()}

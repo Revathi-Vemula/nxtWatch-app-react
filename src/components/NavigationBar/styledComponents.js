@@ -14,9 +14,7 @@ export const NavigationLgContainer = styled.div`
   width: 220px;
   height: 100%;
   position: fixed;
-  padding: 10px;
   margin-top: 68px;
-  padding-left: 15px;
   padding-top: 20px;
   padding-bottom: 60px;
   @media screen and (max-width: 768px) {
@@ -36,9 +34,10 @@ export const NavLinkContainer = styled.li`
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 30px;
-  margin: 8px;
-  background-color: ${props => props.activeTabBgColor};
+  height: 45px;
+  margin-bottom: 5px;
+  padding: 10px;
+  background-color: ${props => props.bgColor} !important;
 `
 
 export const NavText = styled.p`

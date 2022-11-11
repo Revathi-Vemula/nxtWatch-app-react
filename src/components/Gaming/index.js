@@ -1,17 +1,14 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
-import {SiYoutubegaming} from 'react-icons/si'
 import Header from '../Header'
 import NavigationBar from '../NavigationBar'
 import FailureView from '../FailureView'
 import GamingVideoCard from '../GamingVideoCard'
 import ThemeContext from '../../context/ThemeContext'
+import TabTopContainer from '../TabTopContainer'
 import {
   TrendingMainContainer,
-  TrendingTopContainer,
-  TrendingIconContainer,
-  TrendingHeading,
   LoaderContainer,
 } from '../Trending/styledComponents'
 
@@ -114,36 +111,15 @@ class Gaming extends Component {
   }
 
   render() {
-    const {gamingApiStatus} = this.state
-
     return (
-      <ThemeContext.Consumer>
-        {value => {
-          const {isDarkTheme} = value
-
-          return (
-            <>
-              <Header />
-              <NavigationBar />
-              <TrendingMainContainer>
-                <TrendingTopContainer
-                  bgColor={isDarkTheme ? '#181818' : '#f1f1f1'}
-                >
-                  <TrendingIconContainer
-                    bgColor={isDarkTheme ? '#000000' : '#d7dfe9'}
-                  >
-                    <SiYoutubegaming size={30} color="#ff0b37" />
-                  </TrendingIconContainer>
-                  <TrendingHeading color={isDarkTheme ? '#f1f5f9' : '#1e293b'}>
-                    Gaming
-                  </TrendingHeading>
-                </TrendingTopContainer>
-                {this.appendGamingApiResults()}
-              </TrendingMainContainer>
-            </>
-          )
-        }}
-      </ThemeContext.Consumer>
+      <>
+        <Header />
+        <NavigationBar />
+        <TrendingMainContainer>
+          <TabTopContainer tabName="Gaming" />
+          {this.appendGamingApiResults()}
+        </TrendingMainContainer>
+      </>
     )
   }
 }

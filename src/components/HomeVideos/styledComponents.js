@@ -7,7 +7,7 @@ export const HomeVideosContainer = styled.ul`
   flex-wrap: wrap;
   justify-content: flex-start;
   @media screen and (min-width: 768px) {
-    margin-left: 30px;
+    margin-left: 18px;
   }
 `
 export const NoVideosView = styled.div`

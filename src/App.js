@@ -1,4 +1,4 @@
-import {Switch, Route} from 'react-router-dom'
+import {Switch, Route, Redirect} from 'react-router-dom'
 
 import {Component} from 'react'
 import ThemeContext from './context/ThemeContext'
@@ -10,11 +10,28 @@ import Gaming from './components/Gaming'
 import SavedVideos from './components/SavedVideos'
 import VideoItemDetails from './components/VideoItemDetails'
 import './App.css'
+import NotFound from './components/NotFound'
 
 class App extends Component {
   state = {
     isDarkTheme: false,
-    savedVideos: [],
+    savedVideos: [
+      {
+        channelName: 'iB Cricket',
+        description: 'Destructive opening batsman',
+        id: '30b642bd-7591-49f4-ac30-5c538f975b15',
+        profileImageUrl:
+          'https://assets.ccbp.in/frontend/react-js/nxt-watch/ib-cricket-img.png',
+        publishedAt: 'Apr 19, 2019',
+        subscriberCount: '4.13K',
+        thumbnailUrl:
+          'https://assets.ccbp.in/frontend/react-js/nxt-watch/ibc-sol-1-img.png',
+        title:
+          'Sehwag shares his batting experience in iB Cricket | iB Cricket Super Over League',
+        videoUrl: 'https://www.youtube.com/watch?v=wB6IFCeTssk',
+        viewCount: '1.4K',
+      },
+    ],
     activeTab: 'Home',
   }
 
@@ -39,10 +56,12 @@ class App extends Component {
     }
   }
 
-  changeTab = () => {}
+  changeTab = tab => {
+    this.setState({activeTab: tab})
+  }
 
   render() {
-    const {isDarkTheme, isVideoSaved, savedVideos} = this.state
+    const {isDarkTheme, savedVideos, activeTab} = this.state
     console.log(savedVideos)
     return (
       <ThemeContext.Provider
@@ -51,7 +70,7 @@ class App extends Component {
           toggleTheme: this.toggleTheme,
           changeTab: this.changeTab,
           addVideoToSaved: this.addVideoToSaved,
-          isVideoSaved,
+          activeTab,
         }}
       >
         <Switch>
@@ -65,6 +84,8 @@ class App extends Component {
             path="/videos/:id"
             component={VideoItemDetails}
           />
+          <Route path="/not-found" component={NotFound} />
+          <Redirect to="/not-found" />s
         </Switch>
       </ThemeContext.Provider>
     )

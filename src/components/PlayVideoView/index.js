@@ -39,7 +39,6 @@ const PlayVideoView = props => {
     description,
     id,
     publishedAt,
-    thumbnailUrl,
     viewCount,
     videoUrl,
     title,
@@ -58,9 +57,9 @@ const PlayVideoView = props => {
       {value => {
         const {isDarkTheme, savedVideos, addVideoToSaved} = value
 
-        let isVideoSaved
-        const index = savedVideos.findIndex(eachVideo => eachVideo.id === id)
-        if (index === -1) {
+        let isVideoSaved = ''
+        const index = savedVideos.find(eachVideo => eachVideo.id === id)
+        if (index === undefined) {
           isVideoSaved = false
         } else {
           isVideoSaved = true

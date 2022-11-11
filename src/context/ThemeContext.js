@@ -6,7 +6,6 @@ const ThemeContext = React.createContext({
   changeTab: () => {},
   toggleTheme: () => {},
   savedVideos: [],
-  isVideoSaved: false,
   addVideoToSaved: () => {},
 })
 
