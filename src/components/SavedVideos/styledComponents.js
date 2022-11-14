@@ -32,7 +32,9 @@ export const NoSavedMessage = styled.p`
   font-weight: 500;
 `
 
-export const SavedVideosContainer = styled.div`
+export const SavedVideosMainContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   margin-top: 60px;
   display: flex;
   padding-left: 0;
@@ -42,5 +44,7 @@ export const SavedVideosContainer = styled.div`
     margin-top: 68px;
   }
 `
-
-export const SavedVideoItem = styled.li``
+export const SavedVideosContainer = styled.ul`
+  display: flex;
+  flex-direction: column;
+`

@@ -2,13 +2,14 @@ import ThemeContext from '../../context/ThemeContext'
 import Header from '../Header'
 import NavigationBar from '../NavigationBar'
 import TabTopContainer from '../TabTopContainer'
+import SavedVideoCard from '../SavedVideoCard'
 
 import {
-  SavedVideoItem,
   NoSavedVideosView,
   NoSavedImage,
   NoSavedHeading,
   NoSavedMessage,
+  SavedVideosMainContainer,
   SavedVideosContainer,
 } from './styledComponents'
 
@@ -17,7 +18,7 @@ const SavedVideos = () => (
     {value => {
       const {savedVideos, isDarkTheme} = value
 
-      const isSavedListEmpty = false
+      const isSavedListEmpty = savedVideos.length === 0
 
       return (
         <>
@@ -34,7 +35,7 @@ const SavedVideos = () => (
                   No saved videos found
                 </NoSavedHeading>
                 <NoSavedMessage color={isDarkTheme ? '#64748b' : '#7e858e'}>
-                  You can save your videos while watching them
+                  You cana sve your videos while watching them
                 </NoSavedMessage>
               </NoSavedVideosView>
             </>
@@ -42,9 +43,17 @@ const SavedVideos = () => (
             <>
               <Header />
               <NavigationBar />
-              <SavedVideosContainer>
+              <SavedVideosMainContainer>
                 <TabTopContainer tabName="Saved Videos" />
-              </SavedVideosContainer>
+                <SavedVideosContainer>
+                  {savedVideos.map(eachVideo => (
+                    <SavedVideoCard
+                      videoDetails={eachVideo}
+                      key={eachVideo.id}
+                    />
+                  ))}
+                </SavedVideosContainer>
+              </SavedVideosMainContainer>
             </>
           )}
         </>

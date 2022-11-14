@@ -15,23 +15,7 @@ import NotFound from './components/NotFound'
 class App extends Component {
   state = {
     isDarkTheme: false,
-    savedVideos: [
-      {
-        channelName: 'iB Cricket',
-        description: 'Destructive opening batsman',
-        id: '30b642bd-7591-49f4-ac30-5c538f975b15',
-        profileImageUrl:
-          'https://assets.ccbp.in/frontend/react-js/nxt-watch/ib-cricket-img.png',
-        publishedAt: 'Apr 19, 2019',
-        subscriberCount: '4.13K',
-        thumbnailUrl:
-          'https://assets.ccbp.in/frontend/react-js/nxt-watch/ibc-sol-1-img.png',
-        title:
-          'Sehwag shares his batting experience in iB Cricket | iB Cricket Super Over League',
-        videoUrl: 'https://www.youtube.com/watch?v=wB6IFCeTssk',
-        viewCount: '1.4K',
-      },
-    ],
+    savedVideos: [],
     activeTab: 'Home',
   }
 
@@ -62,7 +46,7 @@ class App extends Component {
 
   render() {
     const {isDarkTheme, savedVideos, activeTab} = this.state
-    console.log(savedVideos)
+
     return (
       <ThemeContext.Provider
         value={{
@@ -70,6 +54,7 @@ class App extends Component {
           toggleTheme: this.toggleTheme,
           changeTab: this.changeTab,
           addVideoToSaved: this.addVideoToSaved,
+          savedVideos,
           activeTab,
         }}
       >
