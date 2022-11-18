@@ -66,7 +66,7 @@ class Trending extends Component {
   }
 
   renderLoader = () => (
-    <LoaderContainer>
+    <LoaderContainer data-testid="loader">
       <Loader type="ThreeDots" color="#3b82f6" height="50" width="50" />
     </LoaderContainer>
   )
@@ -87,7 +87,10 @@ class Trending extends Component {
           const {isDarkTheme} = value
 
           return (
-            <VideosContainer bgColor={isDarkTheme ? '#000000' : '#f9f9f9'}>
+            <VideosContainer
+              bgColor={isDarkTheme ? '#0f0f0f' : '#f9f9f9'}
+              data-testid="trending"
+            >
               {trendingVideos.map(eachVideo => (
                 <TrendingVideoCard
                   trendingVideoDetails={eachVideo}

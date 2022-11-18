@@ -26,7 +26,7 @@ const NotFound = () => (
               Page Not Found
             </NotFoundHeading>
             <NotFoundMessage color={isDarkTheme ? '#f1f1f1' : '#64748b'}>
-              We are sorry, the page you requested could not be found
+              We are sorry, the page you requested could not be found.
             </NotFoundMessage>
           </NotFoundContainer>
         </>

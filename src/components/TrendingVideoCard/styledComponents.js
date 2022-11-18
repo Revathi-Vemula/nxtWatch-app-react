@@ -34,7 +34,7 @@ export const VideoDescContainer = styled.div`
   }
 `
 
-export const VideoTitle = styled.h1`
+export const VideoTitle = styled.p`
   color: ${props => props.color};
   font-family: 'Consolas';
   font-size: 16px;

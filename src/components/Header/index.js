@@ -50,7 +50,7 @@ const Header = props => (
       const onClickLogout = () => {
         const {history} = props
         Cookies.remove('jwt_token')
-        history.replace('/')
+        history.replace('/login')
       }
 
       return (
@@ -62,11 +62,15 @@ const Header = props => (
                   ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-dark-theme-img.png'
                   : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png'
               }
-              alt="app logo"
+              alt="website logo"
             />
           </LogoLink>
           <ActionsContainer>
-            <ThemeButton type="button" onClick={onClickChangeTheme}>
+            <ThemeButton
+              type="button"
+              onClick={onClickChangeTheme}
+              data-testid="theme"
+            >
               {isDarkTheme ? (
                 <BsBrightnessHigh color={color} size={25} />
               ) : (
@@ -136,7 +140,12 @@ const Header = props => (
             <Popup
               modal
               trigger={
-                <LogoutButton type="button" color={color} bgColor={bgColor}>
+                <LogoutButton
+                  type="button"
+                  color={color}
+                  bgColor={bgColor}
+                  data-testid="theme"
+                >
                   <FiLogOut size={25} />
                 </LogoutButton>
               }

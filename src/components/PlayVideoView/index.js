@@ -65,18 +65,20 @@ const PlayVideoView = props => {
           isVideoSaved = true
         }
 
-        const colorBasedOnTheme = isDarkTheme ? '#94a3b8' : '#7e858e'
-        const likeIconColor = isVideoLiked ? '#2563eb' : colorBasedOnTheme
-        const dislikeIconColor = isVideoDisliked ? '#2563eb' : colorBasedOnTheme
+        const likeIconColor = isVideoLiked ? '#2563eb' : '#64748b'
+        const dislikeIconColor = isVideoDisliked ? '#2563eb' : '#64748b'
 
-        const saveIconColor = isVideoSaved ? '#2563eb' : colorBasedOnTheme
+        const saveIconColor = isVideoSaved ? '#2563eb' : '#64748b'
 
         const onClickSaveVideo = () => {
           addVideoToSaved(videoDetails)
         }
 
         return (
-          <VideoDetailsContainer bgColor={isDarkTheme ? '#000000' : '#f9f9f9'}>
+          <VideoDetailsContainer
+            bgColor={isDarkTheme ? '#0f0f0f' : '#f9f9f9'}
+            data-testid="videoItemDetails"
+          >
             <ReactPlayer url={videoUrl} controls width="100%" />
             <VideoContainer>
               <VideoTitle color={isDarkTheme ? '#f9f9f9' : '#313131'}>
@@ -119,7 +121,7 @@ const PlayVideoView = props => {
               </InsightsContainer>
               <HorizontalLine color={isDarkTheme ? '#f9f9f9' : '#909090'} />
               <ChannelContainer>
-                <ProfileImage src={profileImageUrl} alt={channelName} />
+                <ProfileImage src={profileImageUrl} alt="channel logo" />
                 <ChannelDetails>
                   <ChannelName>{channelName}</ChannelName>
                   <SubscriberCount color={isDarkTheme ? '#94a3b8' : '#7e858e'}>

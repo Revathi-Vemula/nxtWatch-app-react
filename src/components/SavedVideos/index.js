@@ -26,7 +26,7 @@ const SavedVideos = () => (
             <>
               <Header />
               <NavigationBar />
-              <NoSavedVideosView bgColor={isDarkTheme ? '#000000' : '#f1f1f1'}>
+              <NoSavedVideosView bgColor={isDarkTheme ? '#0f0f0f' : '#f1f1f1'}>
                 <NoSavedImage
                   src="https://assets.ccbp.in/frontend/react-js/nxt-watch-no-saved-videos-img.png"
                   alt="no saved videos"
@@ -35,7 +35,7 @@ const SavedVideos = () => (
                   No saved videos found
                 </NoSavedHeading>
                 <NoSavedMessage color={isDarkTheme ? '#64748b' : '#7e858e'}>
-                  You cana sve your videos while watching them
+                  You can save your videos while watching them
                 </NoSavedMessage>
               </NoSavedVideosView>
             </>
@@ -43,7 +43,10 @@ const SavedVideos = () => (
             <>
               <Header />
               <NavigationBar />
-              <SavedVideosMainContainer>
+              <SavedVideosMainContainer
+                bgColor={isDarkTheme ? '#0f0f0f' : '#f1f1f1'}
+                data-testid="savedVideos"
+              >
                 <TabTopContainer tabName="Saved Videos" />
                 <SavedVideosContainer>
                   {savedVideos.map(eachVideo => (

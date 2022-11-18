@@ -23,6 +23,7 @@ const HomeVideos = props => {
         const {isDarkTheme} = value
         const headingColor = isDarkTheme ? '#ffffff' : '#000000'
         const captionColor = isDarkTheme ? '#e2e8f0' : '#64748b'
+        // const bgColor = isDarkTheme ? '#181818' : '#e2e8f0'
 
         return videosSearched === 0 ? (
           <NoVideosView>
@@ -34,7 +35,7 @@ const HomeVideos = props => {
               No Search results found
             </Heading>
             <Caption color={captionColor}>
-              Try different keywords or remove search filter
+              Try different key words or remove search filter
             </Caption>
             <Retry type="button" onClick={onClickRetryLoading}>
               Retry

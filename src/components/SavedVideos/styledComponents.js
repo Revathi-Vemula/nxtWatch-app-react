@@ -47,4 +47,7 @@ export const SavedVideosMainContainer = styled.div`
 export const SavedVideosContainer = styled.ul`
   display: flex;
   flex-direction: column;
+
+  margin: 0;
+  padding-top: 20px;
 `

@@ -47,14 +47,10 @@ export const ThemeButton = styled.button`
 `
 
 export const ProfileImage = styled.img`
-  display: none;
-
-  @media screen and (min-width: 768px) {
-    display: flex;
-    height: 32px;
-    width: 32px;
-    margin-right: 10px;
-  }
+  display: flex;
+  height: 32px;
+  width: 32px;
+  margin-right: 10px;
 `
 
 export const MenuIcon = styled.div`

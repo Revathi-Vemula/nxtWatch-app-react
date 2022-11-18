@@ -27,14 +27,15 @@ const FailureView = props => {
 
         return (
           <FailureViewContainer>
-            <FailureViewImage src={failureImageUrl} />
+            <FailureViewImage src={failureImageUrl} alt="failure view" />
             <FailureMessage color={headingColor}>
               Oops! Something Went Wrong
             </FailureMessage>
             <FailureDesc color={descColor}>
-              We are having trouble to complete your request. Please try again
+              We are having some trouble to complete your request. Please try
+              again.
             </FailureDesc>
-            <RetryButton type="button" onClick={onClickRetry()}>
+            <RetryButton type="button" onClick={onClickRetry}>
               Retry
             </RetryButton>
           </FailureViewContainer>

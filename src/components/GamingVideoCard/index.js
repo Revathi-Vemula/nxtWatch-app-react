@@ -22,7 +22,7 @@ const GamingVideoCard = props => {
             color={isDarkTheme ? '#ffffff' : '#000000'}
           >
             <GamingVideoCardContainer>
-              <GamingThumbnailImg src={thumbnailUrl} alt={id} />
+              <GamingThumbnailImg src={thumbnailUrl} alt="video thumbnail" />
               <GamingTitle>{title}</GamingTitle>
               <ViewCount color={isDarkTheme ? '#d7dfe9' : '#606060'}>
                 {viewCount} Watching Worldwide

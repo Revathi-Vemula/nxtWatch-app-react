@@ -50,6 +50,8 @@ export const NavText = styled.p`
 export const ContactInfo = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 5px;
+  margin: 5px;
 `
 export const ContactHeading = styled.p`
   font-family: 'Roboto';

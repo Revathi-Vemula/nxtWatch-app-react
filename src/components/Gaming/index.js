@@ -70,7 +70,8 @@ class Gaming extends Component {
 
           return (
             <GamingVideosContainer
-              bgColor={isDarkTheme ? '#000000' : '#f9f9f9'}
+              data-testid="gaming"
+              bgColor={isDarkTheme ? '#0f0f0f' : '#f9f9f9'}
             >
               {gamingVideos.map(eachVideo => (
                 <GamingVideoCard
@@ -86,7 +87,7 @@ class Gaming extends Component {
   }
 
   renderLoader = () => (
-    <LoaderContainer>
+    <LoaderContainer data-testid="loader">
       <Loader type="ThreeDots" height="50" width="50" color="#3b82f6" />
     </LoaderContainer>
   )

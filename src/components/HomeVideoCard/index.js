@@ -38,9 +38,9 @@ const HomeVideoCard = props => {
             to={`videos/${id}`}
           >
             <VideoCardItem>
-              <VideoCoverImage src={thumbnailUrl} alt={id} />
+              <VideoCoverImage src={thumbnailUrl} alt="video thumbnail" />
               <ChannelVideoDescContainer>
-                <ChannelImg src={channelProfileImageUrl} />
+                <ChannelImg src={channelProfileImageUrl} alt="channel logo" />
                 <VideoInsightsContainer>
                   <VideoTitle color={textColor}>{title}</VideoTitle>
                   <ChannelName color={textColor}>{channelName}</ChannelName>

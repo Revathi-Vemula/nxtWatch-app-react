@@ -70,7 +70,7 @@ class App extends Component {
             component={VideoItemDetails}
           />
           <Route path="/not-found" component={NotFound} />
-          <Redirect to="/not-found" />s
+          <Redirect to="/not-found" />
         </Switch>
       </ThemeContext.Provider>
     )

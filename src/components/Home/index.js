@@ -143,17 +143,24 @@ class Home extends Component {
             <>
               <Header />
               <NavigationBar />
-              <HomeContainer bgColor={bgColor}>
-                <BannerSection display={display}>
+              <HomeContainer bgColor={bgColor} data-testid="home">
+                <BannerSection display={display} data-testid="banner">
                   <BannerFirstPart>
-                    <LogoImage src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png" />
+                    <LogoImage
+                      src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
+                      alt="nxt watch logo"
+                    />
                     <BannerDesc>
                       Buy Nxt Watch Premium prepaid plans with UPI
                     </BannerDesc>
                     <BannerButton type="button">GET IT NOW</BannerButton>
                   </BannerFirstPart>
                   <BannerSecondPart>
-                    <CloseButton type="button" onClick={this.closeBanner}>
+                    <CloseButton
+                      type="button"
+                      onClick={this.closeBanner}
+                      data-testid="close"
+                    >
                       <GrFormClose size={25} />
                     </CloseButton>
                   </BannerSecondPart>
@@ -162,7 +169,7 @@ class Home extends Component {
                   borderColor={isDarkTheme ? '#cccccc' : '#909090'}
                 >
                   <SearchInput
-                    type="text"
+                    type="search"
                     placeholder="Search"
                     bgColor={isDarkTheme ? '#181818' : '#f9f9f9'}
                     color={isDarkTheme ? '#cccccc' : '#424242'}
@@ -170,6 +177,7 @@ class Home extends Component {
                     onChange={this.onChangeSearchInput}
                   />
                   <SearchIconContainer
+                    data-testid="searchButton"
                     bgColor={isDarkTheme ? '#606060' : '#f1f1f1'}
                     borderColor={isDarkTheme ? '#cccccc' : '#909090'}
                     type="button"

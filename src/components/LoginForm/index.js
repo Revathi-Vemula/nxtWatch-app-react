@@ -1,3 +1,4 @@
+import {Redirect} from 'react-router-dom'
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import ThemeContext from '../../context/ThemeContext'
@@ -79,6 +80,11 @@ class LoginForm extends Component {
       errorMsg,
     } = this.state
 
+    const jwtToken = Cookies.get('jwt_token')
+    if (jwtToken !== undefined) {
+      return <Redirect to="/" />
+    }
+
     return (
       <ThemeContext.Consumer>
         {value => {
@@ -96,7 +102,7 @@ class LoginForm extends Component {
                       ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-dark-theme-img.png'
                       : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png'
                   }
-                  alt="app logo"
+                  alt="website logo"
                 />
                 <InputContainer>
                   <InputLabel htmlFor="username" color={color}>
